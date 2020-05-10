@@ -1,0 +1,146 @@
+{#{% load static %}#}
+<div class="section-sidebar">
+    {% if user.is_authenticated %}
+        {#            <button><a href="logout">Log out</a></button>#}
+        <div class="sidebar-header">
+            <div class="count-orders">
+                <span>1</span>
+            </div>
+            <div class="account accountNotClicked" id="accountNotClicked" onclick="openAccount()">
+                    <span>
+                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.5 0C8.15606 0 5.43555 2.72051 5.43555 6.06445C5.43555 9.40839 8.15606 12.1289 11.5 12.1289C14.8439 12.1289 17.5645 9.40839 17.5645 6.06445C17.5645 2.72051 14.8439 0 11.5 0ZM11.5 10.7812C8.89916 10.7812 6.7832 8.66529 6.7832 6.06445C6.7832 3.46361 8.89916 1.34766 11.5 1.34766C14.1008 1.34766 16.2168 3.46361 16.2168 6.06445C16.2168 8.66529 14.1008 10.7812 11.5 10.7812Z"
+                              fill="black"/>
+                        <path d="M19.0453 16.0908C17.385 14.405 15.184 13.4766 12.8477 13.4766H10.1523C7.81605 13.4766 5.61496 14.405 3.95465 16.0908C2.30247 17.7684 1.39258 19.9827 1.39258 22.3262C1.39258 22.6983 1.69427 23 2.06641 23H20.9336C21.3057 23 21.6074 22.6983 21.6074 22.3262C21.6074 19.9827 20.6975 17.7684 19.0453 16.0908ZM2.76988 21.6523C3.10747 17.8301 6.28956 14.8242 10.1523 14.8242H12.8477C16.7104 14.8242 19.8925 17.8301 20.2301 21.6523H2.76988Z"
+                              fill="black"/>
+                    </svg>
+                    </span>
+            </div>
+            <div class="account accountClicked" id="accountClicked" onclick="closeAccount()">
+                    <span>
+                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M11 0.723096C7.59652 0.723096 4.8 3.28242 4.8 6.46156C4.8 9.64069 7.59652 12.2 11 12.2C14.4035 12.2 17.2 9.64069 17.2 6.46156C17.2 3.28242 14.4035 0.723096 11 0.723096ZM11 10.5693C8.52188 10.5693 6.53333 8.71159 6.53333 6.46156C6.53333 4.21152 8.52188 2.35387 11 2.35387C13.4781 2.35387 15.4667 4.21152 15.4667 6.46156C15.4667 8.71159 13.4781 10.5693 11 10.5693Z"
+      fill="white" stroke="white" stroke-width="0.4"/>
+<path d="M19.2235 15.9154C17.5168 14.1825 15.2519 13.2266 12.8477 13.2266H10.1523C7.74813 13.2266 5.48316 14.1825 3.77653 15.9154C2.07854 17.6394 1.14258 19.9167 1.14258 22.3262C1.14258 22.8364 1.5562 23.25 2.06641 23.25H20.9336C21.4438 23.25 21.8574 22.8364 21.8574 22.3262C21.8574 19.9167 20.9215 17.6394 19.2235 15.9154ZM19.9519 21.4023H3.04805C3.49759 17.836 6.51478 15.0742 10.1523 15.0742H12.8477C16.4852 15.0742 19.5024 17.836 19.9519 21.4023Z"
+      fill="white" stroke="white" stroke-width="0.5"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="23" height="23" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+                    </span>
+            </div>
+        </div>
+    {% else %}
+        <div class="sidebar-header">
+            <div class="sign-up sidebar-header-button">
+                <a href="register">Sign up</a>
+            </div>
+            <div class="login sidebar-header-button">
+                <a href="login">Log in</a>
+            </div>
+        </div>
+        {#            <button><a href="register">Register</a></button>#}
+        {#            <button><a href="login">Login</a></button>#}
+    {% endif %}
+    <div class="order-block" id="orderBlock">
+        <div class="my-order">
+            My order
+        </div>
+        <div class="my-order-content" id="my-order-content">
+            <div class="empty-order-text" id="empty-order-text">
+                You haven’t picked up anything yet.
+            </div>
+        </div>
+        <div class="order-footer">
+            <div class="order-price">
+                <div class="order-price-text">Total</div>
+                <div class="order-price-number">
+                    <span id="order-price-value">0</span>
+                    UAH
+                </div>
+            </div>
+            <div class="order-button">
+                <button id="submitOrder" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                    Order
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    {#    -- Account -- #}
+    {% if user.is_authenticated %}
+        <div class="account-block" id="accountBlock">
+            <div class="account-component account-name">
+                <label for="name">Name</label>
+                <div id="name" class="account-value">
+                    {#                    {% include 'client/account.html' %}#}
+                    {{ name }}
+                </div>
+            </div>
+            <div class="account-component account-email">
+                <label for="email">E-mail</label>
+                <div id="email" class="account-value">
+                    {{ email }}
+                </div>
+            </div>
+
+
+            {#                <form action="{% url 'client:add_phone'  %}" method=POST>#}
+
+            {% if client.phone == "" %}
+                <div class="account-input account-phone">
+                    <form action="/" method="post">
+                        {% csrf_token %}
+                        {{ phone_form }}
+                        <button id="btnAdd" class="account-add" type="submit">Add</button>
+                    </form>
+                    {#                 <button id="btnAdd" type="submit">Add</button>#}
+                </div>
+            {% else %}
+                <div class="account-component">
+                    <label for="phone">Phone</label>
+                    <div id="phone" class="account-value">
+                        {{ client.phone }}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if client.card == "" %}
+                <div class="account-input account-card">
+                    <form action="/" method="post">
+                        {% csrf_token %}
+                        {{ card_form }}
+                        <button id="btnAdd2" class="account-add" type="submit">Add</button>
+                    </form>
+                </div>
+            {% else %}
+                <div class="account-component">
+                    <label for="card">Card</label>
+                    <div id="card" class="account-value">
+                        {{ client.card }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <button class="account-logout"><a href="logout">Log out</a></button>
+        </div>
+    {% endif %}
+</div>
+
+{#<script src="https://code.jquery.com/jquery-3.4.1.min.js"#}
+{#        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"#}
+{#        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"#}
+{#        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"#}
+{#        crossorigin="anonymous"></script>#}
+{##}
+{#<script src="{% static 'js/main.js' %}"></script>#}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add user info</title>
+</head>
+<body>
+    <form action="add_user_info_submit" method="post">
+        {% csrf_token %}
+        <input type="text" name="phone" placeholder="phone"><br>
+        <input type="text" name="address" placeholder="address"><br>
+        <input type="text" name="card" placeholder="card"><br>
+        <input type="Submit">
+    </form>
+</body>
+</html>

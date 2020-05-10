@@ -1,0 +1,651 @@
+body {
+    margin: 0;
+}
+
+/* -- Wrapper -- */
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.wrapper::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+/* -- Section main -- */
+.section-main {
+    font-size: 20px;
+    width: 70%;
+    margin: 0 5% 0;
+    float: left;
+    padding-top: 110px;
+    padding-bottom: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-nav a {
+    color: inherit;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    padding-right: 50px;
+}
+
+.promo-block {
+    position: relative;
+    background-color: #EFECFF;
+    border-radius: 41px;
+    margin-top: 80px;
+}
+
+.promo-text {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    width: 44%;
+    padding: 30px 0 30px 45px;
+}
+
+.promo-img {
+    position: absolute;
+    bottom: -10px;
+    right: 6%;
+}
+
+.promo-img svg {
+    width: 100%;
+    height: auto;
+}
+
+.shop-categories {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 65px;
+}
+
+.shop-categories-nav {
+    display: flex;
+}
+
+.shop-category-button {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: inherit;
+    border: 1px solid #503E9D;
+    box-sizing: border-box;
+    border-radius: 60px;
+    padding: 8px 20px;
+    margin-left: 10px;
+
+    font-family: 'Montserrat', sans-serif;
+    color: #503E9D;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.shop-categories-text {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.dish-categories {
+    display: flex;
+    padding-top: 50px;
+}
+
+.dish-category {
+    padding: 30px 30px 37px 30px;
+    box-shadow: 0 0 40px rgba(80, 62, 157, 0.08);
+    border-radius: 42px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.dish-category:hover {
+    background-color: #EFECFF;
+}
+
+.dish-category-text {
+    padding-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.shops {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.shop {
+    display: flex;
+    flex-basis: 30%;
+    border: 1px solid #503E9D;
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding: 30px 30px 30px 10px;
+}
+
+.shop-content {
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: -30px;
+}
+
+.shop-name {
+    font-family: 'Krona One', sans-serif;
+    font-size: 20px;
+    color: #503E9D;
+}
+
+.delivery-price {
+    padding-bottom: 10px;
+}
+
+.delivery-price span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #FB6D3A;
+}
+
+.delivery-price-number {
+    font-family: 'Krona One', sans-serif;
+    font-size: 20px;
+    color: #FB6D3A;
+}
+
+/* -- Section sidebar -- */
+.section-sidebar {
+    font-size: 20px;
+    background-color: #F9F9F9;
+    position: fixed;
+    right: 0;
+    width: 25%;
+    float: right;
+    height: 100vh;
+    padding-top: 110px;
+    padding-right: 33px;
+    padding-left: 33px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.count-orders {
+    background: #EFECFF;
+    border-radius: 16px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-right: 13px;
+}
+
+.count-orders span {
+    align-self: center;
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #503E9D;
+}
+
+.account {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.account span {
+    align-self: center;
+}
+
+.accountNotClicked {
+    background: inherit;
+    border: 1px solid #C7C7C7;
+}
+
+.accountClicked {
+    background: #503E9D;
+    border: 2px solid #503E9D;
+}
+
+#accountClicked {
+    display: none;
+}
+
+.account-component {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    color: #503E9D;
+    padding-top: 20px;
+}
+
+.account-block label {
+    font-weight: normal;
+    font-size: 15px;
+    opacity: 1;
+}
+
+.account-value {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.account-email {
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.account-input {
+    margin-top: 20px;
+}
+
+.account-input input[placeholder] {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #503E9D;
+}
+
+.account-input input {
+    width: 80%;
+    background: #FFFFFF;
+    box-shadow: 0 0 40px rgba(80, 62, 157, 0.08);
+    border-radius: 42px;
+    border: none;
+    padding: 20px 30px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    color: #503E9D;
+}
+
+.account-input input:focus {
+    font-weight: bold;
+}
+
+.account-logout {
+    background: #503E9D;
+    border-radius: 60px;
+    padding: 15px 30px;
+    border: none;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.account-logout a {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.account-add {
+    background: #503E9D;
+    border-radius: 60px;
+    padding: 15px 30px;
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.sidebar-header-button {
+    width: 100px;
+    height: 33px;
+    border: 1px solid #503E9D;
+    box-sizing: border-box;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-header-button a {
+    align-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.sign-up {
+    background: #503E9D;
+    margin-right: 15px;
+}
+
+.sign-up a {
+    color: #F9F9F9;
+}
+
+.login a{
+    color: #503E9D;
+}
+
+.my-order {
+    font-family: 'Krona One', sans-serif;
+    margin-top: 140px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.empty-order-text {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #503E9D;
+}
+
+.my-order-content {
+    flex: 1;
+}
+
+.order-footer {
+    text-align: center;
+}
+
+.order-price {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.order-price-number {
+    color: #FB6D3A;
+}
+
+.order-button {
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+.order-button button {
+    border-radius: 60px;
+    width: 100%;
+    height: 60px;
+    text-decoration: none;
+    background-color: #DFDFDF;
+    border: none;
+    color: #FFFFFF;
+
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.order-block {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.background {
+    margin-top: 30px;
+    background: url('../img/salateira.svg');
+    position: relative;
+    width: 100%;
+    height: 215px;
+}
+
+.layer {
+    background: linear-gradient(90deg, #372020 0%, #736363 53.87%, #FFFFFF 100%);
+    opacity: 0.57;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* -- Shop Page -- */
+
+.shop-dishes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.shop-category {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    color: #FB6D3A;
+    text-transform: uppercase;
+    margin-top: 70px;
+}
+
+.dish-weight {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #503E9D;
+}
+
+.shop-promo-name {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 86px;
+    color: #FFFFFF;
+}
+
+.promo-nav, .shop-promo-name {
+    padding-left: 100px;
+}
+
+.promo-nav {
+    padding-top: 40px;
+}
+
+.shop-promo-name {
+    padding-top: 20px;
+}
+
+.promo-nav-value {
+    font-family: 'Krona One', sans-serif;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* -- Forms -- */
+.account-input form label {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: #503E9D;
+    opacity: 1;
+}
+
+/* Dish card */
+.dish-card {
+
+}
+
+.active-card {
+    background-color: #503E9D;
+}
+
+.active-card .shop-content .shop-name, .active-card .shop-content .dish-weight {
+    color: #FFFFFF;
+}
+
+.active-card .shop-content .delivery-price .delivery-price-number {
+    display: none;
+}
+
+.add-to-cart {
+    display: none;
+}
+
+.active-card .shop-content .add-to-cart {
+    display: block;
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #FB6D3A;
+}
+
+/* -- Order -- */
+.dishInOrder {
+    margin-top: 20px;
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: #503E9D;
+}
+
+.dishInOrderFlexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dishInOrderCount {
+    display: flex;
+    justify-content: center;
+}
+
+.dishInOrderSpan {
+    align-self: flex-end;
+
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: #503E9D;
+}
+
+.price-hover {
+    display: none;
+}
+
+.dishInOrderPr {
+    display: flex;
+    justify-content: center;
+}
+
+.dishInOrderPrSpan {
+    align-self: flex-end;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* -- Modal -- */
+
+.modal-lg {
+    width: 870px;
+}
+
+.modal-content {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 149px !important;
+}
+
+.modal-body{
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.modal-body .title {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    color: #FB6D3A;
+    margin-top: 180px;
+}
+
+.modal-body .text {
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #503E9D;
+    margin-top: 30px;
+}
+
+.okay {
+    background: #503E9D;
+    border-radius: 60px;
+    color: #FFFFFF;
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    width: 40%;
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 40px;
+    margin-bottom: 130px;
+}
+
+.add-to-cart{
+    text-align: right;
+    background-color: inherit;
+    border: none;
+}
